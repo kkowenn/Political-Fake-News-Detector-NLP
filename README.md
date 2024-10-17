@@ -178,7 +178,9 @@ After experimenting with various models and strategies, **Model 5** stands out a
 
 Model 5 provides the best combination of accuracy, stability, and generalization. It successfully balances training and validation performance, avoids overfitting, and delivers reliable predictions, making it the optimal choice for the fake news detection application
 
-more another technique:
+---
+
+## more technique:
 
 we do mini cross-Validation
 Cross-validation is a technique used to assess the performance of a model by splitting the dataset into multiple subsets or "folds." The model is trained on some folds and tested on the remaining fold(s), and this process is repeated. The result is averaged to provide a better estimate of the model's performance.
