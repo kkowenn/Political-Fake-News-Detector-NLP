@@ -224,7 +224,7 @@ Model 8 (Cross-Validation): Cross-validation provided a more reliable estimate o
 
 Model 9 (Semi-Supervised Learning): Semi-supervised learning enabled the model to utilize unlabeled data effectively, leading to better generalization and reducing overfitting compared to fully supervised models. Model 9 showed better validation performance by leveraging a mixture of labeled and pseudo-labeled data.
 
-**Note: due to limited resource we cannot fully finish trainning the model 8 and 9** 
+**Note: due to limited resource we cannot fully finish trainning the model 8 and 9 so we won't use them in the application** 
 
 # Application:
 This is for who want to quickly assess the authenticity of news articles and understand the likelihood of encountering fake news based on content analysis. 
