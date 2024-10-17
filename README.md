@@ -178,6 +178,51 @@ After experimenting with various models and strategies, **Model 5** stands out a
 
 Model 5 provides the best combination of accuracy, stability, and generalization. It successfully balances training and validation performance, avoids overfitting, and delivers reliable predictions, making it the optimal choice for the fake news detection application
 
+more another technique:
+
+we do mini cross-Validation
+Cross-validation is a technique used to assess the performance of a model by splitting the dataset into multiple subsets or "folds." The model is trained on some folds and tested on the remaining fold(s), and this process is repeated. The result is averaged to provide a better estimate of the model's performance.
+
+Cross-Validation Setup in Model 8:
+We applied KFold Cross-Validation with 5 splits for Model 8 to better evaluate its performance across different subsets of the data.
+
+![img](10_model8/EscoreModel8.png)
+
+![img](10_model8/Model8.png)
+
+Training Accuracy: The training accuracy for each fold converged towards 99%-100%, indicating that the model learned well during training.
+
+Validation Accuracy: The average validation accuracy across the 5 folds was 96%-97%.
+
+Training Loss: The training loss remained low, near zero.
+
+Validation Loss: The validation loss was stable but fluctuated slightly across the folds, showing minor overfitting signs.
+
+we convert supervised model to Semi-Supervised model on model 9:
+
+Semi-supervised learning combines labeled and unlabeled data to improve the model's performance. It’s particularly useful when a large portion of the dataset lacks labels. The labeled data is used to train the model, and the model can make predictions on the unlabeled data, treating them as "pseudo-labels" for further training.
+
+We removed 50% of the labels from the combined dataset (kaggle_dataset + backtranslate + augmented datasets). The unlabeled data points were marked with a label of -1
+In Model 9, we applied semi-supervised learning by deliberately removing 50% of the labels from the training data to simulate an unlabeled dataset.
+
+![img](11_model9/EscoreModel9.png)
+
+![img](11_model9/model9.png)
+
+Training Accuracy: Training accuracy started lower compared to fully labeled models but steadily increased to 98%-99% after incorporating the pseudo-labels.
+
+Validation Accuracy: The model’s validation accuracy stabilized around 98%, showing better generalization compared to fully supervised models.
+
+Training Loss: Training loss initially fluctuated due to the inclusion of pseudo-labels but converged over time.
+
+Validation Loss: The validation loss was more stable than previous versions, showing less fluctuation and overfitting.
+
+Model 8 (Cross-Validation): Cross-validation provided a more reliable estimate of the model's performance, but overfitting was still a challenge, as training accuracy remained significantly higher than validation accuracy.
+
+
+Model 9 (Semi-Supervised Learning): Semi-supervised learning enabled the model to utilize unlabeled data effectively, leading to better generalization and reducing overfitting compared to fully supervised models. Model 9 showed better validation performance by leveraging a mixture of labeled and pseudo-labeled data.
+
+**Note: due to limited resource we cannot fully finish trainning the model 8 and 9** 
 
 # Application:
 This is for who want to quickly assess the authenticity of news articles and understand the likelihood of encountering fake news based on content analysis. 
